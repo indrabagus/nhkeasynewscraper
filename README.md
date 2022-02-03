@@ -1,2 +1,2 @@
 # nhkeasynewscraper
-Simple python to scraping NHK Easy news site
+Simple Python program for scraping NHK Easy News site
