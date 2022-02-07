@@ -126,9 +126,6 @@ def scrapping_news():
 
 
 def mainapp():
-    # easynewsurl = "https://www3.nhk.or.jp/news/html/20211216/k10013391101000.html"
-    # data = scrapper(easynewsurl)
-    # print(data)
     scrapping_news()
 
 
