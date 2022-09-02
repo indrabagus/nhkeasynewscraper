@@ -10,6 +10,7 @@ from encodings import utf_8
 import requests
 from bs4 import BeautifulSoup
 import json
+import os
             
 def brmarking_to_list(markinginput):
     lbody = list()
@@ -105,10 +106,13 @@ def extract_to_file(foutput,contentdata):
 
 def scrapping_news():
     listnews = newslist()
+    dirname = "./results"
+    if not os.path.exists(dirname):
+        os.mkdir(dirname)
     for news in listnews:
         data = scrapper(news['news_web_url'])
         if data == None : continue
-        with open(news['news_id']+".txt","w+",encoding="utf_8") as foutput:
+        with open(dirname+"/"+news['news_id']+".txt","w+",encoding="utf_8") as foutput:
             foutput.write("News URL: "+news['news_web_url']+'\n')
             foutput.write("Title "+'\n')
             foutput.write(data['title']+'\n\n')
